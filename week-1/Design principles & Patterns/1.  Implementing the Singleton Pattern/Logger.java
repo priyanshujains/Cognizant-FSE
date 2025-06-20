@@ -10,7 +10,7 @@ public class Logger {
     // Public static method to get the single instance of the class
     public static Logger getInstance() {
         if (instance == null) {
-            synchronized (Logger.class) {
+            synchronized (Logger.class) {   // Lock for thread safety
                 if (instance == null) {
                     instance = new Logger();
                 }
@@ -24,3 +24,11 @@ public class Logger {
         System.out.println("Log: " + message);
     }
 }
+
+/*
+*   My UnderStanding-
+*   Singleton Pattern ensures that a class has only one instance and provides a global point of access to it.
+*   To make thread safe we introduce the locking in the method getInstance()
+*   Locking is expensive, so we check instance == null first to skip locking if already created
+*   If two threads enter simultaneously, synchronized block ensures only one creates the instance
+*/
