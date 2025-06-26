@@ -60,6 +60,9 @@ VALUES (1, 'Aman Verma', TO_DATE('1958-08-15', 'YYYY-MM-DD'), 25000, SYSDATE, NU
 INSERT INTO Customers (CustomerID, Name, DOB, Balance, LastModified, IsVIP)
 VALUES (2, 'Priya Nair', TO_DATE('2002-03-12', 'YYYY-MM-DD'), 9500, SYSDATE, NULL);
 
+INSERT INTO Customers (CustomerID, Name, DOB, Balance, LastModified, IsVIP)
+VALUES (3, 'Rahul Singh', TO_DATE('1960-11-05', 'YYYY-MM-DD'), 12000, SYSDATE, NULL);
+
 
 -- Inserting accounts for each customer
 INSERT INTO Accounts (AccountID, CustomerID, AccountType, Balance, LastModified)
@@ -165,13 +168,13 @@ BEGIN
         IF var_balance > 10000 THEN
             -- Set IsVIP to TRUE
             UPDATE CUSTOMERS
-            SET ISVIP = 'TRUE'
+            SET ISVIP = '1'
             WHERE CUSTOMERID = var_customer_id;
             DBMS_OUTPUT.PUT_LINE('Customer ID ' || var_customer_id || ' marked as VIP.');
         ELSE
             -- Set IsVIP to FALSE
             UPDATE CUSTOMERS
-            SET ISVIP = 'FALSE'
+            SET ISVIP = '0'
             WHERE CUSTOMERID = var_customer_id;
             DBMS_OUTPUT.PUT_LINE('Customer ID ' || var_customer_id || ' is not a VIP.');
         END IF;

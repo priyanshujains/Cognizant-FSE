@@ -63,6 +63,9 @@ VALUES (1, 'Aman Verma', TO_DATE('1958-08-15', 'YYYY-MM-DD'), 25000, SYSDATE, NU
 INSERT INTO Customers (CustomerID, Name, DOB, Balance, LastModified, IsVIP)
 VALUES (2, 'Priya Nair', TO_DATE('2002-03-12', 'YYYY-MM-DD'), 9500, SYSDATE, NULL);
 
+INSERT INTO Customers (CustomerID, Name, DOB, Balance, LastModified, IsVIP)
+VALUES (3, 'Rahul Singh', TO_DATE('1960-11-05', 'YYYY-MM-DD'), 12000, SYSDATE, NULL);
+
 
 -- Accounts
 INSERT INTO Accounts (AccountID, CustomerID, AccountType, Balance, LastModified)
